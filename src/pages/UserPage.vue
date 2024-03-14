@@ -16,6 +16,7 @@ const user = {
 
 const router = useRouter();
 
+
 const toEdit = (editKey: String, editName: String, currentValue: String) => {
   router.push({
     path: '/user/edit',
