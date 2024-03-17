@@ -10,7 +10,7 @@
       <van-icon name="search" size="18" />
     </template>
   </van-nav-bar>
-  <div>
+  <div id="content">
     <router-view/>
   </div>
   <van-tabbar route @change="onChange">
@@ -40,5 +40,7 @@ const onChange = (index: any) => showToast(`标签 ${index}`);
 
 
 <style>
-
+#content {
+  padding-bottom: 50px;
+}
 </style>
