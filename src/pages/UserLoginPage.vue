@@ -2,9 +2,10 @@
 import { ref } from 'vue';
 import myAxios from "../plugins/myAxios";
 import {showToast} from "vant/es";
-import {useRouter} from "vue-router";
+import {useRoute, useRouter} from "vue-router";
 
 const router = useRouter();
+const route = useRoute();
 
 const userAccount = ref('');
 const userPassword = ref('');
@@ -17,7 +18,9 @@ const onSubmit = async () => {
   console.log(res, "用户登录");
   if (res.code === 0 && res.data) {
     showToast("登录成功");
-    router.replace("/");
+    // 跳转到之前页面
+    const redirectUrl = route.query?.redirect as string ?? '/';
+    window.location.href = redirectUrl;
   } else {
     showToast("登录失败");
   }
