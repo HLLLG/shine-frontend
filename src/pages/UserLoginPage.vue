@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import {ref} from 'vue';
 import myAxios from "../plugins/myAxios";
 import {showToast} from "vant/es";
-import {useRoute, useRouter} from "vue-router";
+import {useRoute} from "vue-router";
 
-const router = useRouter();
 const route = useRoute();
 
 const userAccount = ref('');
